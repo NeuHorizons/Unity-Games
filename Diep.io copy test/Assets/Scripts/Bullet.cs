@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float bulletSpeed = 10f;  // Speed of the bullet.
     public float lifetime = 2f;      // Lifetime of the bullet in seconds.
+    public int damage = 10;          // Damage the projectile deals upon collision.
 
     private Rigidbody2D rb;
 
@@ -19,6 +20,20 @@ public class Bullet : MonoBehaviour
 
         // Destroy the bullet after the set lifetime has passed.
         Destroy(gameObject, lifetime);
+    }
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        // Check if the bullet hit an enemy or another object.
+        // Add logic for what happens when it hits an enemy.
+        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);  // Assuming the Enemy script has a TakeDamage method.
+        }
+
+        // Destroy the bullet upon collision.
+        Destroy(gameObject);
     }
 
     // Optional: A method to extend or reduce the bullet's lifetime dynamically.
