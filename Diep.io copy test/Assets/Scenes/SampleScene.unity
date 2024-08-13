@@ -501,6 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1118767246}
+  canvasGroup: {fileID: 0}
 --- !u!1 &1136162030
 GameObject:
   m_ObjectHideFlags: 0
