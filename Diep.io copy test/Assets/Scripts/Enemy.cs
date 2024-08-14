@@ -6,9 +6,18 @@ public class Enemy : MonoBehaviour
 {
     public int health = 100;  // The health of the enemy.
     public HealthBar healthBar;  // Reference to the HealthBar script.
+    public int pointValue;
+
+    private GameManager gameManager;
+
+
 
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+
+
+
         // Initialize the health bar with the maximum health.
         if (healthBar != null)
         {
@@ -38,6 +47,7 @@ public class Enemy : MonoBehaviour
     // Method to handle the enemy's death.
     void Die()
     {
+        gameManager.UpdateScore(pointValue);
         // Destroy the enemy game object when it dies.
         Destroy(gameObject);
     }
