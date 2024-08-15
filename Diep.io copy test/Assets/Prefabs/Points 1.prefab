@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 7891244154915942375}
   - component: {fileID: 355050735385706993}
   m_Layer: 0
-  m_Name: Points
+  m_Name: Points 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
